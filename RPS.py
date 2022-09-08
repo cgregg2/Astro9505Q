@@ -20,10 +20,10 @@ while Game_on==True:
 
         print('\n\nWelcome players', RPS['Player 1'], 'and', RPS['Player 2']+"!\n\n")
 
+    # Setting score to win. Assumes input is not an integer (Score_int=False)
+    # When max score is an integer, continues to game
     Max_Score = input('What score would you like to play to?\n')
     Score_int=False
-
-    RPS['Score'] = [0,0]
 
     while Score_int==False:
         try:
@@ -35,11 +35,17 @@ while Game_on==True:
         except:
             Max_Score = input('Invalid input, please input an integer...\n:')
         
-
+    # Game score is set, time to start the game
     print('\nOkay! PLaying until a player reaches a score of ', Max_Score, '\n\n')
     time.sleep(0.5)
 
+    # Ensures score is always 0,0 at the start of the game
+    RPS['Score'] = [0,0]
+
+    # Game continues to play until Max score is reached
     while max(RPS['Score']) < Max_Score:
+
+    	####### Player 1's turn ##########
         print(RPS['Player 1']+"'s decsion,", RPS['Player 2'], 'please look away.\n')
         time.sleep(1)
         print(
