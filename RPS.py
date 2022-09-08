@@ -93,33 +93,41 @@ while Game_on==True:
 
         time.sleep(0.5)
 
-        if RPS['Input1'] == 0:
-            if RPS['Input2'] == 0:
-                print('Draw! Score remains the same.')
-            if RPS['Input2'] == 1:
-                print(RPS['Player 2'],'wins round!')
-                RPS['Score'][1] += 1
-            elif RPS['Input2']==2:
-                print(RPS['Player 1'],'wins round!')
-                RPS['Score'][0] += 1
-        elif RPS['Input1'] == 1:
-            if RPS['Input2'] == 0:
-                print(RPS['Player 1'],'wins round!')
-                RPS['Score'][0] += 1
-            if RPS['Input2'] == 1:
-                print('Draw! Score remains the same.')
-            elif RPS['Input2']==2:
-                print(RPS['Player 2'],'wins round!')
-                RPS['Score'][1] += 1
-        elif RPS['Input1'] == 2:
-            if RPS['Input2'] == 0:
-                print(RPS['Player 2'],'wins round!')
-                RPS['Score'][1] += 1
-            if RPS['Input2'] == 1:
-                print(RPS['Player 1'],'wins round!')
-                RPS['Score'][0] += 1
-            elif RPS['Input2']==2:
-                print('Draw! Score remains the same.')
+        if (RPS['Input1'] - RPS['Input2']) == 0:
+            print('Draw! Score remains the same.')
+        elif ((RPS['Input1'] - RPS['Input2']) == 2) or ((RPS['Input1'] - RPS['Input2']) == -1):
+            print(RPS['Player 2'],'wins round!')
+            RPS['Score'][1] += 1
+        elif ((RPS['Input1'] - RPS['Input2']) == 1) or ((RPS['Input1'] - RPS['Input2']) == -2):
+            print(RPS['Player 1'],'wins round!')
+            RPS['Score'][0] += 1
+        # if RPS['Input1'] == 0:
+        #     if RPS['Input2'] == 0:
+        #         print('Draw! Score remains the same.')
+        #     if RPS['Input2'] == 1:
+        #         print(RPS['Player 2'],'wins round!')
+        #         RPS['Score'][1] += 1
+        #     elif RPS['Input2']==2:
+        #         print(RPS['Player 1'],'wins round!')
+        #         RPS['Score'][0] += 1
+        # elif RPS['Input1'] == 1:
+        #     if RPS['Input2'] == 0:
+        #         print(RPS['Player 1'],'wins round!')
+        #         RPS['Score'][0] += 1
+        #     if RPS['Input2'] == 1:
+        #         print('Draw! Score remains the same.')
+        #     elif RPS['Input2']==2:
+        #         print(RPS['Player 2'],'wins round!')
+        #         RPS['Score'][1] += 1
+        # elif RPS['Input1'] == 2:
+        #     if RPS['Input2'] == 0:
+        #         print(RPS['Player 2'],'wins round!')
+        #         RPS['Score'][1] += 1
+        #     if RPS['Input2'] == 1:
+        #         print(RPS['Player 1'],'wins round!')
+        #         RPS['Score'][0] += 1
+        #     elif RPS['Input2']==2:
+        #         print('Draw! Score remains the same.')
 
         time.sleep(0.5)
 
