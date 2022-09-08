@@ -3,11 +3,15 @@
 
 import time
 
+# Game continues to run if True
 Game_on = True
+# Game will "restart" if True by re-asking name (after game is complete)
 Restart = True
 
+# While Game is on, run through game
 while Game_on==True:
 
+#     If game is restarted, ask player names and welcome them
     if Restart== True:
         RPS = {'Player 1':'None', 'Input1':'None', 'Player 2': 'None', 'Input2':'None', 'Score':[0,0]}
 
