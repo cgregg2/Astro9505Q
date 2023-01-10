@@ -56,20 +56,25 @@ while Game_on==True:
 
         input1_false = True
         while input1_false == True:
-            try:
-                RPS['Input1'] = int(RPS['Input1'])
-                if RPS['Input1']>2 or RPS['Input1']<0:
+            if len(RPS['Input1']) == 1:
+                try:
+                    RPS['Input1'] = int(RPS['Input1'])
+                    if RPS['Input1']>2 or RPS['Input1']<0:
+                        print('Invalid input, please choose another option...')
+                        RPS['Input1'] = input(RPS['Player 1']+"'s input: ")
+                    elif 0<=RPS['Input1']<=2:
+                        input1_false=False
+                except:
                     print('Invalid input, please choose another option...')
                     RPS['Input1'] = input(RPS['Player 1']+"'s input: ")
-                elif 0<=RPS['Input1']<=2:
-                    input1_false=False
-            except:
+            else:    
                 print('Invalid input, please choose another option...')
                 RPS['Input1'] = input(RPS['Player 1']+"'s input: ")
 
+
         print('\n'*100)
 
-        time.sleep(1)
+        time.sleep(0.25)
 
         print(RPS['Player 2']+"'s decsion,", RPS['Player 1'], 'please look away.\n')
         print(
@@ -78,20 +83,24 @@ while Game_on==True:
         RPS['Input2'] = input(RPS['Player 2']+"'s input: ")
         input2_false = True
         while input2_false == True:
-            try:
-                RPS['Input2'] = int(RPS['Input2'])
-                if RPS['Input2']>2 or RPS['Input2']<0:
+            if len(RPS['Input2']) == 1:
+                try:
+                    RPS['Input2'] = int(RPS['Input2'])
+                    if RPS['Input2']>2 or RPS['Input2']<0:
+                        print('Invalid input, please choose another option...')
+                        RPS['Input2'] = input(RPS['Player 2']+"'s input: ")
+                    elif 0<=RPS['Input2']<=2:
+                        input2_false=False
+                except:
                     print('Invalid input, please choose another option...')
                     RPS['Input2'] = input(RPS['Player 2']+"'s input: ")
-                elif 0<=RPS['Input2']<=2:
-                    input2_false=False
-            except:
+            else:
                 print('Invalid input, please choose another option...')
                 RPS['Input2'] = input(RPS['Player 2']+"'s input: ")
 
         print('\n'*100)
 
-        time.sleep(0.5)
+        time.sleep(1)
 
         if (RPS['Input1'] - RPS['Input2']) == 0:
             print('Draw! Score remains the same.')
@@ -101,33 +110,6 @@ while Game_on==True:
         elif ((RPS['Input1'] - RPS['Input2']) == 1) or ((RPS['Input1'] - RPS['Input2']) == -2):
             print(RPS['Player 1'],'wins round!')
             RPS['Score'][0] += 1
-        # if RPS['Input1'] == 0:
-        #     if RPS['Input2'] == 0:
-        #         print('Draw! Score remains the same.')
-        #     if RPS['Input2'] == 1:
-        #         print(RPS['Player 2'],'wins round!')
-        #         RPS['Score'][1] += 1
-        #     elif RPS['Input2']==2:
-        #         print(RPS['Player 1'],'wins round!')
-        #         RPS['Score'][0] += 1
-        # elif RPS['Input1'] == 1:
-        #     if RPS['Input2'] == 0:
-        #         print(RPS['Player 1'],'wins round!')
-        #         RPS['Score'][0] += 1
-        #     if RPS['Input2'] == 1:
-        #         print('Draw! Score remains the same.')
-        #     elif RPS['Input2']==2:
-        #         print(RPS['Player 2'],'wins round!')
-        #         RPS['Score'][1] += 1
-        # elif RPS['Input1'] == 2:
-        #     if RPS['Input2'] == 0:
-        #         print(RPS['Player 2'],'wins round!')
-        #         RPS['Score'][1] += 1
-        #     if RPS['Input2'] == 1:
-        #         print(RPS['Player 1'],'wins round!')
-        #         RPS['Score'][0] += 1
-        #     elif RPS['Input2']==2:
-        #         print('Draw! Score remains the same.')
 
         time.sleep(0.5)
 
